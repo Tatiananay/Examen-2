@@ -1,0 +1,10 @@
+2           GPS1            ac
+7           GPS7            aaabbct
+1           GPS1            bc
+2           GPS2            ac
+4           GPS4            acd
+0           GPS0            ab
+1           GPS1            bc
+2           GPS2            ac
+7           GPS7            aaabbct
+1           GPS1            aaabbcd
