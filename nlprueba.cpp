@@ -1,31 +1,36 @@
+/* Author: Nayeli Leiva
+   Date : 06-03-2023
+   link github: https://github.com/Tatiananay/Examen-2*/
+
 #include<iostream>
 #include<stdlib.h>
-#include<fstream>
-#include<windows.h>
+#include<fstream>      //Libreria propia de archivos.
+#include<windows.h>   //Libreria que nos permite dar color al código
 #define color SetConsoleTextAttribute       
 
 using namespace std;
 
-const string NLNOMBRE_COMPLETO = "Nayeli Tatiana Leiva Chafla";
-const string NLCEDULA = "1721042172";
-const string NLSECCARGA = "1 7 2 1 0 4 ";
+
+const string NLNOMBRE_COMPLETO = "Nayeli Tatiana Leiva Chafla";  //constantes
+const string NLCEDULA = "1721042172";                            //constantes
+const string NLSECCARGA = "1 7 2 1 0 4 ";                        //constantes
 
 
-struct coordenadas{
+struct coordenadas{                          //función de tipo struct que nos permite guardar los datos de las coordenas
     //int nlcapacidad_belica;
     int nlcap;
     string nltipoAe;
     string nlgeo; 
 }a;
 
-void nllectura();
+void nllectura();                           
 int main(){
 
     nllectura();
     return 0;
 }
 
-void nllectura(){
+void nllectura(){                                       //Función void que lee  el archivo txt 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);  //Función propia de la librería windows.h 
     ifstream nlarchivo;
     string texto;
@@ -39,7 +44,7 @@ void nllectura(){
     cout << "ERROR : cap,       Geo,   Tipo Arcenal -->stoi" << endl;
     color(hConsole, 5);
 
-    while(!nlarchivo.eof()){
+    while(!nlarchivo.eof()){                                //Bucle que nos permite colocar el porcentaje en  el código.
         getline(nlarchivo,texto);
         color(hConsole, 5); 
         int nl =0;
@@ -55,7 +60,7 @@ void nllectura(){
         cout << texto << endl;
     }nlarchivo.close();
 
-    system("cls");
+    system("cls");                              //Limpia la pantalla
     color(hConsole, 2); 
     cout<<"\n\n";
     cout<<"[+]InformaciOn Arbol Binario de capacidad belica Ucraniana"<<endl;
